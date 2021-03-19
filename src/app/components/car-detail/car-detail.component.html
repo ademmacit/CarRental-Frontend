@@ -1,0 +1,18 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>carName</th>
+      <th>brand</th>
+      <th>color</th>
+      <th>price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let detail of carDetails">
+      <td>{{ detail.carName }}</td>
+      <td>{{ detail.brandName }}</td>
+      <td>{{ detail.colorName }}</td>
+      <td>{{ detail.dailyPrice }}</td>
+    </tr>
+  </tbody>
+</table>
