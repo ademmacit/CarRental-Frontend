@@ -8,7 +8,10 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let detail of carDetails">
+    <tr
+      *ngFor="let detail of carDetails"
+      routerLink="/cars/detail/{{ detail.carId }}"
+    >
       <td>{{ detail.carName }}</td>
       <td>{{ detail.brandName }}</td>
       <td>{{ detail.colorName }}</td>

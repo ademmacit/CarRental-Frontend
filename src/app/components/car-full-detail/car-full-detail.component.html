@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-md-7">
+    <img
+      *ngFor="let image of currentCarImages"
+      class="img-fluid"
+      src="{{ imageUrl }}{{ image.imagePath }}"
+    />
+  </div>
+  <div class="col-md-5">
+    <li class="list-group-item">
+      brand name : {{ currentCarDetail.brandName }}
+    </li>
+    <li class="list-group-item">car id : {{ currentCarDetail.carId }}</li>
+    <li class="list-group-item">color : {{ currentCarDetail.colorName }}</li>
+    <li class="list-group-item">price : {{ currentCarDetail.dailyPrice }}</li>
+  </div>
+</div>
