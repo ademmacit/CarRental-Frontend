@@ -1,0 +1,40 @@
+<div class="row">
+  <li class="list-group-item">
+    <h4>customer :</h4>
+    <div class="mb-3">
+      <select
+        class="form-select form-select-sm"
+        type="number"
+        [(ngModel)]="selectedCustomer"
+        (change)="onSelectedCustomerChange()"
+      >
+        <option *ngFor="let customer of customers" [ngValue]="customer">
+          {{ customer.companyName }}
+        </option>
+      </select>
+    </div>
+  </li>
+
+  <li class="list-group-item">
+    <h4>rent start date :</h4>
+    <input
+      class="form-control"
+      value="{{ getTodayDate() }}"
+      type="date"
+      [(ngModel)]="startDate"
+    />
+  </li>
+  <li class="list-group-item">
+    <h4>rent end date :</h4>
+    <input
+      class="form-control"
+      value="{{ getTodayDate() }}"
+      type="date"
+      [(ngModel)]="endDate"
+    />
+  </li>
+  <li class="list-group-item">
+    <button (click)="rentCar()" class="btn btn-primary">Rent</button>
+  </li>
+</div>
+<div class="jumbotron"></div>

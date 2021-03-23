@@ -1,12 +1,26 @@
-<h3>colors</h3>
+<div class="mb-3">
+  <input
+    type="text"
+    [(ngModel)]="filterText"
+    class="form-control"
+    id="ColorfilterText"
+    placeholder="color to search"
+  />
 
-<ul class="list-group">
-  <li
-    *ngFor="let color of colors"
-    (click)="setCurrentColor(color)"
-    [class]="getCurrentColorClass(color)"
-    routerLink="/cars/color/{{ color.id }}"
+  <select
+    class="form-select form-select-sm"
+    type="number"
+    [(ngModel)]="selectedColor"
+    (change)="onSelectedColorChange()"
   >
-    {{ color.name }}
-  </li>
-</ul>
+    <option selected [ngValue]="allColorsOption">
+      {{ allColorsOption.name }}
+    </option>
+    <option
+      *ngFor="let color of colors | colorFilterPipe: filterText"
+      [ngValue]="color"
+    >
+      {{ color.name }}
+    </option>
+  </select>
+</div>

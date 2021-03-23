@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Brand } from 'src/app/models/brand';
 import { BrandService } from 'src/app/services/brand.service';
 
@@ -8,12 +8,19 @@ import { BrandService } from 'src/app/services/brand.service';
   styleUrls: ['./brand.component.css'],
 })
 export class BrandComponent implements OnInit {
-  currentBrand: Brand;
+  selectedBrand: Brand;
+  allBrandsOption: Brand = { id: 0, name: 'all' };
+  filterText: string = '';
+
   brands: Brand[] = [];
   constructor(private brandService: BrandService) {}
 
+  @Output() selectedBrandEmitter = new EventEmitter<Brand>();
+
   ngOnInit(): void {
     this.getBrands();
+    this.selectedBrand = this.allBrandsOption;
+    this.selectedBrandEmitter.emit(this.selectedBrand);
   }
 
   getBrands() {
@@ -21,14 +28,8 @@ export class BrandComponent implements OnInit {
       this.brands = response.data;
     });
   }
-  setCurrentBrand(brand: Brand) {
-    this.currentBrand = brand;
-  }
-  getCurrentBrandClass(brand: Brand) {
-    if (brand == this.currentBrand) {
-      return 'list-group-item active';
-    } else {
-      return 'list-group-item';
-    }
+
+  onSelectedBrandChange() {
+    this.selectedBrandEmitter.emit(this.selectedBrand);
   }
 }

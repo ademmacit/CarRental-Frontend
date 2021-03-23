@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { carDetail } from 'src/app/models/carDetail';
 import { carImage } from 'src/app/models/carImage';
 import { CarFullDetailService } from 'src/app/services/car-full-detail.service';
+import { RentalService } from 'src/app/services/rental.service';
 
 @Component({
   selector: 'app-car-full-detail',
@@ -16,7 +17,8 @@ export class CarFullDetailComponent implements OnInit {
 
   constructor(
     private carFullDetailService: CarFullDetailService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private rentalService: RentalService
   ) {}
 
   ngOnInit(): void {

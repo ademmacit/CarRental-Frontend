@@ -1,3 +1,13 @@
+<div class="mb-3">
+  <input
+    type="text"
+    [(ngModel)]="filterText"
+    class="form-control"
+    id="carfilterText"
+    placeholder="aranacak araç"
+  />
+</div>
+
 <table class="table">
   <thead>
     <tr>
@@ -9,7 +19,7 @@
   </thead>
   <tbody>
     <tr
-      *ngFor="let detail of carDetails"
+      *ngFor="let detail of carDetails | carFilterPipe: filterText"
       routerLink="/cars/detail/{{ detail.carId }}"
     >
       <td>{{ detail.carName }}</td>

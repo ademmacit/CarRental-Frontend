@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Color } from 'src/app/models/color';
 import { ColorService } from 'src/app/services/color.service';
 
@@ -8,12 +8,19 @@ import { ColorService } from 'src/app/services/color.service';
   styleUrls: ['./color.component.css'],
 })
 export class ColorComponent implements OnInit {
-  currentColor: Color;
+  selectedColor: Color;
   colors: Color[] = [];
+  allColorsOption: Color = { id: 0, name: 'all' };
+  filterText: string = '';
+
   constructor(private colorService: ColorService) {}
+
+  @Output() selectedColorEmitter = new EventEmitter<Color>();
 
   ngOnInit(): void {
     this.getColors();
+    this.selectedColor = this.allColorsOption;
+    this.selectedColorEmitter.emit(this.selectedColor);
   }
 
   getColors() {
@@ -21,14 +28,8 @@ export class ColorComponent implements OnInit {
       this.colors = response.data;
     });
   }
-  setCurrentColor(color: Color) {
-    this.currentColor = color;
-  }
-  getCurrentColorClass(color: Color) {
-    if (color == this.currentColor) {
-      return 'list-group-item active';
-    } else {
-      return 'list-group-item';
-    }
+
+  onSelectedColorChange() {
+    this.selectedColorEmitter.emit(this.selectedColor);
   }
 }

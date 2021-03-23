@@ -1,0 +1,11 @@
+<app-brand (selectedBrandEmitter)="receiveBrand($event)"></app-brand>
+
+<app-color (selectedColorEmitter)="receiveColor($event)"></app-color>
+
+<button
+  class="btn btn-primary"
+  (click)="filterCars()"
+  routerLink="/cars/color/{{ selectedColor.id }}/brand/{{ selectedBrand.id }}"
+>
+  Filter
+</button>
