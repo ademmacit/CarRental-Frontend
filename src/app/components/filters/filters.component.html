@@ -1,6 +1,10 @@
-<app-brand (selectedBrandEmitter)="receiveBrand($event)"></app-brand>
+<app-brand-select
+  (selectedBrandEmitter)="receiveBrand($event)"
+></app-brand-select>
 
-<app-color (selectedColorEmitter)="receiveColor($event)"></app-color>
+<app-color-select
+  (selectedColorEmitter)="receiveColor($event)"
+></app-color-select>
 
 <button
   class="btn btn-primary"

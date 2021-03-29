@@ -3,11 +3,11 @@ import { Brand } from 'src/app/models/brand';
 import { BrandService } from 'src/app/services/brand.service';
 
 @Component({
-  selector: 'app-brand',
-  templateUrl: './brand.component.html',
-  styleUrls: ['./brand.component.css'],
+  selector: 'app-brand-select',
+  templateUrl: './brand-select.component.html',
+  styleUrls: ['./brand-select.component.css'],
 })
-export class BrandComponent implements OnInit {
+export class BrandSelectComponent implements OnInit {
   selectedBrand: Brand;
   allBrandsOption: Brand = { id: 0, name: 'all' };
   filterText: string = '';

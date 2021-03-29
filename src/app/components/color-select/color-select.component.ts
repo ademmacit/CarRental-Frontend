@@ -3,11 +3,11 @@ import { Color } from 'src/app/models/color';
 import { ColorService } from 'src/app/services/color.service';
 
 @Component({
-  selector: 'app-color',
-  templateUrl: './color.component.html',
-  styleUrls: ['./color.component.css'],
+  selector: 'app-color-select',
+  templateUrl: './color-select.component.html',
+  styleUrls: ['./color-select.component.css'],
 })
-export class ColorComponent implements OnInit {
+export class ColorSelectComponent implements OnInit {
   selectedColor: Color;
   colors: Color[] = [];
   allColorsOption: Color = { id: 0, name: 'all' };
