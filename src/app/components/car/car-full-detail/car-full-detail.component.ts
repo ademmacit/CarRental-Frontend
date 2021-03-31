@@ -13,6 +13,7 @@ import { RentalService } from 'src/app/services/rental.service';
 export class CarFullDetailComponent implements OnInit {
   currentCarDetail: carDetail;
   currentCarImages: carImage[] = [];
+  dataLoaded: boolean = false;
   imageUrl: string = 'https://localhost:44330/';
 
   constructor(
@@ -26,6 +27,7 @@ export class CarFullDetailComponent implements OnInit {
       if (params['carId']) {
         this.getCarDetail(params['carId']);
         this.getCarImages(params['carId']);
+        this.dataLoaded = true;
       }
     });
   }

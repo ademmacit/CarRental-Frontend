@@ -14,17 +14,60 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link" href="#">Cars</a>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Car
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Car list</a></li>
+            <li><a class="dropdown-item" routerLink="/cars/add">Add car</a></li>
+          </ul>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/brands/add">Add brand</a>
+
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Brand
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li>
+              <a class="dropdown-item" routerLink="/brands/list">Brand list</a>
+            </li>
+            <li>
+              <a class="dropdown-item" routerLink="/brands/add">Add brand</a>
+            </li>
+          </ul>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/colors/add">Add color</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/cars/add">Add car</a>
+
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Color
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li>
+              <a class="dropdown-item" routerLink="/colors/list">Color list</a>
+            </li>
+            <li>
+              <a class="dropdown-item" routerLink="/colors/add">Add color</a>
+            </li>
+          </ul>
         </li>
       </ul>
     </div>

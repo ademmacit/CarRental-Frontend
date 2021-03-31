@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" *ngIf="dataLoaded == true">
   <div class="col-md-7">
     <img
       *ngFor="let image of currentCarImages"
