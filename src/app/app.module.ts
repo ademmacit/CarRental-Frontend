@@ -11,7 +11,7 @@ import { NaviComponent } from './components/navi/navi.component';
 import { BrandSelectComponent } from './components/brand/brand-select/brand-select.component';
 import { ColorSelectComponent } from './components/color/color-select/color-select.component';
 import { CustomerComponent } from './components/customer/customer.component';
-import { CarDetailComponent } from './components/car/car-detail/car-detail.component';
+import { CarDetailListComponent } from './components/car/car-detail-list/car-detail-list.component';
 import { RentalDetailComponent } from './components/rental-detail/rental-detail.component';
 import { CarFullDetailComponent } from './components/car/car-full-detail/car-full-detail.component';
 import { BrandFilterPipePipe } from './pipes/brand-filter-pipe.pipe';
@@ -27,6 +27,8 @@ import { BrandListComponent } from './components/brand/brand-list/brand-list.com
 import { BrandUpdateComponent } from './components/brand/brand-update/brand-update.component';
 import { ColorListComponent } from './components/color/color-list/color-list.component';
 import { ColorUpdateComponent } from './components/color/color-update/color-update.component';
+import { CarListComponent } from './components/car/car-list/car-list.component';
+import { CarUpdateComponent } from './components/car/car-update/car-update.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,7 @@ import { ColorUpdateComponent } from './components/color/color-update/color-upda
     BrandSelectComponent,
     ColorSelectComponent,
     CustomerComponent,
-    CarDetailComponent,
+    CarDetailListComponent,
     RentalDetailComponent,
     CarFullDetailComponent,
     BrandFilterPipePipe,
@@ -51,6 +53,8 @@ import { ColorUpdateComponent } from './components/color/color-update/color-upda
     BrandUpdateComponent,
     ColorListComponent,
     ColorUpdateComponent,
+    CarListComponent,
+    CarUpdateComponent,
   ],
   imports: [
     BrowserModule,

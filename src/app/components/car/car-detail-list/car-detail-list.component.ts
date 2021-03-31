@@ -5,11 +5,11 @@ import { carDetail } from 'src/app/models/carDetail';
 import { CarDetailService } from 'src/app/services/car-detail.service';
 
 @Component({
-  selector: 'app-car-detail',
-  templateUrl: './car-detail.component.html',
-  styleUrls: ['./car-detail.component.css'],
+  selector: 'app-car-detail-list',
+  templateUrl: './car-detail-list.component.html',
+  styleUrls: ['./car-detail-list.component.css'],
 })
-export class CarDetailComponent implements OnInit {
+export class CarDetailListComponent implements OnInit {
   carDetails: carDetail[] = [];
   filterText: string = '';
   constructor(
