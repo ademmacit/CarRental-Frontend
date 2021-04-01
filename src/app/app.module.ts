@@ -29,6 +29,7 @@ import { ColorListComponent } from './components/color/color-list/color-list.com
 import { ColorUpdateComponent } from './components/color/color-update/color-update.component';
 import { CarListComponent } from './components/car/car-list/car-list.component';
 import { CarUpdateComponent } from './components/car/car-update/car-update.component';
+import { LoginFormComponent } from './components/login-form/login-form.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { CarUpdateComponent } from './components/car/car-update/car-update.compo
     ColorUpdateComponent,
     CarListComponent,
     CarUpdateComponent,
+    LoginFormComponent,
   ],
   imports: [
     BrowserModule,
