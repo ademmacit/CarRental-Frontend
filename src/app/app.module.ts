@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -29,7 +29,9 @@ import { ColorListComponent } from './components/color/color-list/color-list.com
 import { ColorUpdateComponent } from './components/color/color-update/color-update.component';
 import { CarListComponent } from './components/car/car-list/car-list.component';
 import { CarUpdateComponent } from './components/car/car-update/car-update.component';
-import { LoginFormComponent } from './components/login-form/login-form.component';
+import { LoginFormComponent } from './components/user/login-form/login-form.component';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { RegisterFormComponent } from './components/user/register-form/register-form.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +59,7 @@ import { LoginFormComponent } from './components/login-form/login-form.component
     CarListComponent,
     CarUpdateComponent,
     LoginFormComponent,
+    RegisterFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -70,7 +73,9 @@ import { LoginFormComponent } from './components/login-form/login-form.component
       timeOut: 1500,
     }),
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
