@@ -6,4 +6,5 @@ export interface carDetail {
   dailyPrice: number;
   brandId: number;
   colorId: number;
+  findeks: number;
 }

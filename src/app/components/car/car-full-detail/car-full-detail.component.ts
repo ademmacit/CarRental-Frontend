@@ -18,8 +18,7 @@ export class CarFullDetailComponent implements OnInit {
 
   constructor(
     private carFullDetailService: CarFullDetailService,
-    private activatedRoute: ActivatedRoute,
-    private rentalService: RentalService
+    private activatedRoute: ActivatedRoute
   ) {}
 
   ngOnInit(): void {

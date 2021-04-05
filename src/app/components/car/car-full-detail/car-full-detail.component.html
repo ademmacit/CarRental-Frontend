@@ -13,6 +13,7 @@
     <li class="list-group-item">car id : {{ currentCarDetail.carId }}</li>
     <li class="list-group-item">color : {{ currentCarDetail.colorName }}</li>
     <li class="list-group-item">price : {{ currentCarDetail.dailyPrice }}</li>
+    <li class="list-group-item">findeks : {{ currentCarDetail.findeks }}</li>
   </div>
 </div>
-<app-rent-form [carToBeRentId]="currentCarDetail.carId"></app-rent-form>
+<app-rent-form [carDetailToBeRent]="currentCarDetail"></app-rent-form>
