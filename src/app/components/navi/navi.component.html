@@ -72,6 +72,39 @@
           </ul>
         </li>
       </ul>
+
+      <ul class="navbar-nav">
+        <div *ngIf="!CheckJwtToken()" class="d-flex gap-2">
+          <button class="btn btn-outline-primary" routerLink="/user/register">
+            Register
+          </button>
+          <button class="btn btn-outline-success" routerLink="/user/login">
+            Login
+          </button>
+        </div>
+
+        <li *ngIf="CheckJwtToken()" class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            {{ currentUserName }}
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li>
+              <a class="dropdown-item" routerLink="/user/info">User info</a>
+            </li>
+            <li>
+              <a class="dropdown-item" routerLink="/cars" (click)="Logout()"
+                >Logout</a
+              >
+            </li>
+          </ul>
+        </li>
+      </ul>
     </div>
   </div>
 </nav>

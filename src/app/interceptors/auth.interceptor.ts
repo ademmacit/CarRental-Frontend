@@ -6,17 +6,17 @@ import {
   HttpInterceptor,
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { ToastrService } from 'ngx-toastr';
+import { LocalStorageService } from '../services/local-storage.service';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
-  constructor() {}
+  constructor(private localStorageService: LocalStorageService) {}
 
   intercept(
     request: HttpRequest<unknown>,
     next: HttpHandler
   ): Observable<HttpEvent<unknown>> {
-    let token = localStorage.getItem('token');
+    let token = this.localStorageService.Get('token');
 
     let newRequest: HttpRequest<any>;
 

@@ -32,6 +32,7 @@ import { CarUpdateComponent } from './components/car/car-update/car-update.compo
 import { LoginFormComponent } from './components/user/login-form/login-form.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { RegisterFormComponent } from './components/user/register-form/register-form.component';
+import { UserInfoFormComponent } from './components/user/user-info-form/user-info-form.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import { RegisterFormComponent } from './components/user/register-form/register-
     CarUpdateComponent,
     LoginFormComponent,
     RegisterFormComponent,
+    UserInfoFormComponent,
   ],
   imports: [
     BrowserModule,

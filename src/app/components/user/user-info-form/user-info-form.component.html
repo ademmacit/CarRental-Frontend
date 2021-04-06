@@ -1,0 +1,50 @@
+<div class="content">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header"><h5 class="title">Update user info</h5></div>
+      <div class="card-body">
+        <form [formGroup]="userInfoUpdateForm">
+          <div class="mb-3">
+            <label for="firstName">First name</label>
+            <div class="form-group">
+              <input
+                class="form-control input-lg"
+                type="text"
+                id="firstName"
+                formControlName="firstName"
+                placeholder="firstName"
+              />
+            </div>
+
+            <label for="lastName">Last name</label>
+            <div class="form-group">
+              <input
+                class="form-control input-lg"
+                type="text"
+                id="lastName"
+                formControlName="lastName"
+                placeholder="lastName"
+              />
+            </div>
+
+            <label for="email">email</label>
+            <div class="form-group">
+              <input
+                class="form-control input-lg"
+                type="text"
+                id="email"
+                formControlName="email"
+                placeholder="email"
+              />
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="card-footer">
+        <button class="btn btn-fill btn-primary" (click)="update()">
+          update
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

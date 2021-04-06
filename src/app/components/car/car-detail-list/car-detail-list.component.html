@@ -1,31 +1,36 @@
-<div class="mb-3">
-  <input
-    type="text"
-    [(ngModel)]="filterText"
-    class="form-control"
-    id="carfilterText"
-    placeholder="car name"
-  />
-</div>
+<div class="row">
+  <div class="col-3"><app-filters></app-filters></div>
+  <div class="col-9">
+    <div class="mb-3">
+      <input
+        type="text"
+        [(ngModel)]="filterText"
+        class="form-control"
+        id="carfilterText"
+        placeholder="car name"
+      />
+    </div>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>carName</th>
-      <th>brand</th>
-      <th>color</th>
-      <th>price</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr
-      *ngFor="let detail of carDetails | carFilterPipe: filterText"
-      routerLink="/cars/detail/{{ detail.carId }}"
-    >
-      <td>{{ detail.carName }}</td>
-      <td>{{ detail.brandName }}</td>
-      <td>{{ detail.colorName }}</td>
-      <td>{{ detail.dailyPrice }}</td>
-    </tr>
-  </tbody>
-</table>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>carName</th>
+          <th>brand</th>
+          <th>color</th>
+          <th>price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="let detail of carDetails | carFilterPipe: filterText"
+          routerLink="/cars/detail/{{ detail.carId }}"
+        >
+          <td>{{ detail.carName }}</td>
+          <td>{{ detail.brandName }}</td>
+          <td>{{ detail.colorName }}</td>
+          <td>{{ detail.dailyPrice }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,39 +1,119 @@
-<div class="mb-3">
-  <label for="cardNameInput" class="form-label">Name on card</label>
-  <input type="text" class="form-control" id="cardNameInput" />
-</div>
-<div class="mb-3">
-  <label for="cardNumberInput" class="form-label">Card number</label>
-  <input type="text" class="form-control" id="cardNumberInput" />
-</div>
-<label for="expirationDateInput" class="form-label">Expiration date</label>
+<div class="content">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header"><h5 class="title">Payment info</h5></div>
+      <div class="card-body">
+        <form [formGroup]="paymentInfoForm">
+          <div class="mb-3">
+            <label for="nameOnCard">Name on card</label>
+            <div class="form-group">
+              <input
+                class="form-control input-lg"
+                type="text"
+                id="nameOnCard"
+                formControlName="nameOnCard"
+                placeholder="nameOnCard"
+              />
+            </div>
 
-<div class="input-group mb-3" id="expirationDateInput">
-  <select class="form-select">
-    <option selected>Choose...</option>
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-    <option value="6">6</option>
-    <option value="7">7</option>
-    <option value="8">8</option>
-    <option value="9">9</option>
-    <option value="10">10</option>
-    <option value="11">11</option>
-    <option value="12">12</option>
-  </select>
-  <span class="input-group-text"> </span>
-  <select class="form-select" id="inputGroupSelect01">
-    <option selected>Choose...</option>
-    <option value="1">2021</option>
-    <option value="2">2022</option>
-    <option value="3">....</option>
-  </select>
+            <label for="cardNumber">Card number</label>
+            <div class="form-group">
+              <input
+                class="form-control input-lg"
+                type="text"
+                id="cardNumber"
+                formControlName="cardNumber"
+                placeholder="cardNumber"
+              />
+            </div>
+
+            <label for="cvv">cvv</label>
+            <div class="form-group">
+              <input
+                class="form-control input-lg"
+                type="number"
+                id="cvv"
+                formControlName="cvv"
+                placeholder="cvv"
+              />
+            </div>
+
+            <label for="lastUseMonth">last use</label>
+            <div class="form-group input-group">
+              <input
+                class="form-control input-lg"
+                type="number"
+                id="lastUseMonth"
+                formControlName="lastUseMonth"
+                placeholder="lastUseMonth"
+              />
+              <span class="input-group-text"> </span>
+
+              <input
+                class="form-control input-lg"
+                type="number"
+                id="lastUseYear"
+                formControlName="lastUseYear"
+                placeholder="lastUseYear"
+              />
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="card-footer">
+        <!-- Button trigger modal -->
+        <button
+          class="btn btn-fill btn-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#staticBackdrop"
+        >
+          Submit
+        </button>
+      </div>
+
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="staticBackdrop"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel">permission</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">Save credit card information?</div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+                (click)="addRental()"
+              >
+                No
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-dismiss="modal"
+                (click)="savePaymentInfo()"
+              >
+                Yes
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-<div class="mb-3">
-  <label for="cvvInput" class="form-label">cvv</label>
-  <input type="text" class="form-control" id="cvvInput" />
-</div>
-<button class="btn btn-primary" (click)="addRental()">Submit</button>
