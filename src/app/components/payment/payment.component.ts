@@ -75,7 +75,6 @@ export class PaymentComponent implements OnInit {
     if (userId != null) {
       this.creditCardService.getByUserId(userId).subscribe((response) => {
         if (response.data != null) {
-          console.log(response.data);
           this.toastr.info('loading credit card info');
           this.paymentInfoForm.patchValue({
             cardNumber: response.data.cardNumber,

@@ -20,13 +20,4 @@ export class FiltersComponent implements OnInit {
   receiveColor($event: any) {
     this.selectedColor = $event;
   }
-
-  filterCars() {
-    if (this.selectedColor) {
-      console.log(this.selectedColor.name);
-    }
-    if (this.selectedBrand) {
-      console.log(this.selectedBrand.name);
-    }
-  }
 }

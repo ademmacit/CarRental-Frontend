@@ -10,6 +10,11 @@ import { CarService } from 'src/app/services/car.service';
 })
 export class CarListComponent implements OnInit {
   cars: Car[] = [];
+  tableRefreshing: boolean = false;
+  pressedCar = {
+    deleteProgress: 0,
+    carId: 0,
+  };
   constructor(
     private carService: CarService,
     private toastrService: ToastrService
@@ -21,17 +26,33 @@ export class CarListComponent implements OnInit {
   fillCars() {
     this.carService.getCars().subscribe((response) => {
       this.cars = response.data;
+      this.tableRefreshing = false;
     });
   }
 
+  holdHandler(e: number, car: Car) {
+    this.pressedCar.carId = car.id;
+    this.pressedCar.deleteProgress = e / 5;
+
+    if (e / 10 > 100) {
+      this.deleteCar(car);
+    }
+  }
+
   deleteCar(car: Car) {
+    this.tableRefreshing = true;
+
     this.carService.delete(car).subscribe((response) => {
       if (response.success) {
         this.toastrService.success('Color deleted');
-        this.fillCars();
       } else {
         this.toastrService.error(response.message);
       }
+      this.fillCars();
+      this.pressedCar = {
+        deleteProgress: 0,
+        carId: 0,
+      };
     });
   }
 }
