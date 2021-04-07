@@ -10,6 +10,11 @@ import { BrandService } from 'src/app/services/brand.service';
 })
 export class BrandListComponent implements OnInit {
   brands: Brand[] = [];
+  pressedBrand = {
+    deleteProgress: 0,
+    brandId: 0,
+  };
+  tableRefreshing: boolean = false;
   filterText: string = '';
   constructor(
     private brandService: BrandService,
@@ -23,17 +28,33 @@ export class BrandListComponent implements OnInit {
   fillBrands() {
     this.brandService.getBrands().subscribe((response) => {
       this.brands = response.data;
+      this.tableRefreshing = false;
     });
   }
 
+  holdHandler(e: number, brand: Brand) {
+    this.pressedBrand.brandId = brand.id;
+    this.pressedBrand.deleteProgress = e / 5;
+
+    if (e / 10 > 100) {
+      this.deleteBrand(brand);
+    }
+  }
+
   deleteBrand(brand: Brand) {
+    this.tableRefreshing = true;
+
     this.brandService.delete(brand).subscribe((response) => {
       if (response.success) {
         this.toastrService.success('Brand deleted');
-        this.fillBrands();
       } else {
         this.toastrService.error(response.message);
       }
+      this.fillBrands();
+      this.pressedBrand = {
+        deleteProgress: 0,
+        brandId: 0,
+      };
     });
   }
 }

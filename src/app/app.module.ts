@@ -33,6 +33,7 @@ import { LoginFormComponent } from './components/user/login-form/login-form.comp
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { RegisterFormComponent } from './components/user/register-form/register-form.component';
 import { UserInfoFormComponent } from './components/user/user-info-form/user-info-form.component';
+import { HoldToDeleteDirective } from './directives/hold-to-delete.directive';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import { UserInfoFormComponent } from './components/user/user-info-form/user-inf
     LoginFormComponent,
     RegisterFormComponent,
     UserInfoFormComponent,
+    HoldToDeleteDirective,
   ],
   imports: [
     BrowserModule,

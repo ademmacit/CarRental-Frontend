@@ -9,7 +9,7 @@
     />
   </div>
   <div class="col-md-2">
-    <button class="btn btn-info" (click)="fillColors()" type="button">
+    <button class="btn btn-outline-info" (click)="fillColors()" type="button">
       refresh
     </button>
   </div>
@@ -28,21 +28,23 @@
       <td>{{ color.id }}</td>
       <td>{{ color.name }}</td>
       <td>
-        <button
-          class="btn btn-danger"
-          (click)="deleteColor(color)"
-          type="button"
-        >
-          delete
-        </button>
+        <div class="d-flex gap-2">
+          <button
+            class="btn btn-outline-danger"
+            (click)="deleteColor(color)"
+            type="button"
+          >
+            delete
+          </button>
 
-        <button
-          class="btn btn-info"
-          type="button"
-          routerLink="../update/{{ color.id }}"
-        >
-          update
-        </button>
+          <button
+            class="btn btn-outline-info"
+            type="button"
+            routerLink="../update/{{ color.id }}"
+          >
+            update
+          </button>
+        </div>
       </td>
     </tr>
   </tbody>
