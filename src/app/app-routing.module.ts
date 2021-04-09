@@ -15,6 +15,7 @@ import { LoginFormComponent } from './components/user/login-form/login-form.comp
 import { PaymentComponent } from './components/payment/payment.component';
 import { RegisterFormComponent } from './components/user/register-form/register-form.component';
 import { UserInfoFormComponent } from './components/user/user-info-form/user-info-form.component';
+import { CarImageAddComponent } from './components/car/car-image-add/car-image-add.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: CarDetailListComponent },
@@ -29,6 +30,7 @@ const routes: Routes = [
   { path: 'cars/add', component: CarAddComponent },
   { path: 'cars/list', component: CarListComponent },
   { path: 'cars/update/:carId', component: CarUpdateComponent },
+  { path: 'cars/addImage', component: CarImageAddComponent },
   { path: 'payment/:rental', component: PaymentComponent },
 
   { path: 'brands/add', component: BrandAddComponent },

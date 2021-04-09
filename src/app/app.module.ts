@@ -34,6 +34,8 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { RegisterFormComponent } from './components/user/register-form/register-form.component';
 import { UserInfoFormComponent } from './components/user/user-info-form/user-info-form.component';
 import { HoldToDeleteDirective } from './directives/hold-to-delete.directive';
+import { CarImageAddComponent } from './components/car/car-image-add/car-image-add.component';
+import { FileUploadComponent } from './formControls/file-upload/file-upload.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +66,8 @@ import { HoldToDeleteDirective } from './directives/hold-to-delete.directive';
     RegisterFormComponent,
     UserInfoFormComponent,
     HoldToDeleteDirective,
+    CarImageAddComponent,
+    FileUploadComponent,
   ],
   imports: [
     BrowserModule,
