@@ -22,7 +22,6 @@ export class HoldToDeleteDirective {
     this.cancel = this.state.pipe(
       filter((v) => v === 'cancel'),
       tap((v) => {
-        console.log('%c stopped hold', 'color : red');
         this.holdTime.emit(0);
       })
     );
@@ -36,8 +35,6 @@ export class HoldToDeleteDirective {
 
   @HostListener('mousedown', ['$event'])
   onHold() {
-    console.log('%c started hold', 'color : green');
-
     this.state.next('start');
     const n = 100;
 
