@@ -16,6 +16,7 @@ import { PaymentComponent } from './components/payment/payment.component';
 import { RegisterFormComponent } from './components/user/register-form/register-form.component';
 import { UserInfoFormComponent } from './components/user/user-info-form/user-info-form.component';
 import { CarImageAddComponent } from './components/car/car-image-add/car-image-add.component';
+import { LoginGuard } from './guards/login.guard';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: CarDetailListComponent },
@@ -42,7 +43,11 @@ const routes: Routes = [
 
   { path: 'user/login', component: LoginFormComponent },
   { path: 'user/register', component: RegisterFormComponent },
-  { path: 'user/info', component: UserInfoFormComponent },
+  {
+    path: 'user/info',
+    component: UserInfoFormComponent,
+    canActivate: [LoginGuard],
+  },
 ];
 
 @NgModule({
